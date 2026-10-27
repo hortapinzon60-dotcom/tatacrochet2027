@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tatacrochet 2027 - AMOOOOOOR</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fdf4f7',
+              100: '#fbe8ef',
+              200: '#f7d5e2',
+              300: '#f1b4cb',
+              400: '#e888ab',
+              500: '#db608a',
+              600: '#c8406f',
+              700: '#a72f56',
+              800: '#8b2a4a',
+              900: '#752742',
+            },
+            warmbg: '#FAF7F5'
+          },
+          fontFamily: {
+            fredoka: ['Fredoka', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FAF7F5;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-heading {
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    /* Animaciones para las Mascotas */
+    @keyframes earWiggleLeft {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-5deg); }
+    }
+    @keyframes earWiggleRight {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(6deg); }
+    }
+    @keyframes tailWag {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(12deg); }
+    }
+    @keyframes bowBreathe {
+      0%, 100% { transform: scale(1) translateY(0); }
+      50% { transform: scale(1.08) translateY(-2px); }
+    }
+    @keyframes blinkEye {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+    @keyframes subtleGlow {
+      0%, 100% { filter: drop-shadow(0 4px 12px rgba(219, 96, 138, 0.15)); }
+      50% { filter: drop-shadow(0 8px 20px rgba(219, 96, 138, 0.3)); }
+    }
+
+    .animate-ear-left { animation: earWiggleLeft 3.5s ease-in-out infinite; transform-origin: top right; }
+    .animate-ear-right { animation: earWiggleRight 4s ease-in-out infinite; transform-origin: top left; }
+    .animate-tail { animation: tailWag 1.8s ease-in-out infinite; transform-origin: bottom center; }
+    .animate-bow { animation: bowBreathe 2.5s ease-in-out infinite; transform-origin: center; }
+    .animate-blink { animation: blinkEye 4s infinite; transform-origin: center; }
+    .mascot-card { animation: subtleGlow 4s ease-in-out infinite; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- CAPA DE AUTENTICACIÓN (LOGIN) -->
+  <div id="login-screen" class="fixed inset-0 bg-gradient-to-br from-pink-100 via-warmbg to-rose-100 z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full border border-pink-100 relative overflow-hidden">
+      
+      <!-- Decoración animada de fondo -->
+      <div class="absolute -top-12 -right-12 w-32 h-32 bg-pink-200 rounded-full blur-2xl opacity-50"></div>
+      <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-rose-200 rounded-full blur-2xl opacity-50"></div>
+
+      <!-- Mascotas Animadas Tatacrochet en Login -->
+      <div class="flex justify-center mb-4 mascot-card">
+        <svg class="w-48 h-40" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sillón Béige Warm -->
+          <path d="M 30 140 C 30 110, 290 110, 290 140 L 300 210 C 300 225, 285 230, 270 230 L 50 230 C 35 230, 20 225, 20 210 Z" fill="#E8DEC9" stroke="#CFC2A9" stroke-width="3" />
+          <path d="M 40 100 C 40 80, 280 80, 280 100 L 280 150 L 40 150 Z" fill="#F3ECE0" stroke="#D1C4AD" stroke-width="2" />
+          
+          <!-- PERRITA 1: Cocker Rubia con Moñito (Izquierda) -->
+          <g id="dog-left">
+            <!-- Cuerpo y Pata -->
+            <path d="M 80 140 Q 75 180 85 210 Q 110 215 125 210 Q 120 170 115 140 Z" fill="#E6A868" />
+            <path d="M 90 150 C 90 150, 100 185, 100 210" stroke="#C98444" stroke-width="2" stroke-dasharray="3 3" />
+            <!-- Patitas blancas -->
+            <ellipse cx="90" cy="212" rx="12" ry="6" fill="#FFF5E6" />
+            <ellipse cx="118" cy="212" rx="10" ry="5" fill="#FFF5E6" />
+            
+            <!-- Orejas LARGAS COCKER con animación -->
+            <path class="animate-ear-left" d="M 72 105 C 55 115, 50 155, 68 165 C 78 170, 82 140, 80 115 Z" fill="#B86D2C" />
+            <path class="animate-ear-right" d="M 128 105 C 145 115, 150 155, 132 165 C 122 170, 118 140, 120 115 Z" fill="#B86D2C" />
+
+            <!-- Cabeza y Hocico -->
+            <circle cx="100" cy="110" r="28" fill="#F3C38B" />
+            <ellipse cx="100" cy="120" rx="16" ry="12" fill="#FFF5E6" />
+            <!-- Nariz y Boca -->
+            <polygon points="96,114 104,114 100,120" fill="#4A2E19" rx="2" />
+            <path d="M 100 120 L 100 125 M 96 123 Q 100 127 104 123" stroke="#4A2E19" stroke-width="1.5" />
+            
+            <!-- Ojos con parpadeo -->
+            <g class="animate-blink">
+              <circle cx="90" cy="106" r="3.5" fill="#3D2314" />
+              <circle cx="110" cy="106" r="3.5" fill="#3D2314" />
+              <circle cx="89" cy="104.5" r="1" fill="#FFFFFF" />
+              <circle cx="109" cy="104.5" r="1" fill="#FFFFFF" />
+            </g>
+            
+            <!-- Pecas / Manchitas caracteristicas Cocker -->
+            <circle cx="95" cy="118" r="1" fill="#B86D2C" />
+            <circle cx="105" cy="118" r="1" fill="#B86D2C" />
+            <circle cx="97" cy="121" r="1" fill="#B86D2C" />
+
+            <!-- Moñito / Topknot Animado de Crochet -->
+            <g class="animate-bow">
+              <!-- Copete de pelo hacia arriba -->
+              <path d="M 96 84 C 92 72, 100 68, 100 68 C 100 68, 108 72, 104 84 Z" fill="#F3C38B" />
+              <!-- Moño de Crochet Rosa -->
+              <path d="M 92 82 C 85 76, 85 88, 96 85 C 85 82, 92 90, 96 85 Z" fill="#DB608A" />
+              <path d="M 108 82 C 115 76, 115 88, 104 85 C 115 82, 108 90, 104 85 Z" fill="#DB608A" />
+              <circle cx="100" cy="85" r="3" fill="#F7D5E2" />
+            </g>
+          </g>
+
+          <!-- PERRITA 2: Cocker Caramelo Clarito Mirando con Cariño (Derecha) -->
+          <g id="dog-right">
+            <!-- Cola moviéndose -->
+            <path class="animate-tail" d="M 240 170 Q 260 165 255 145" stroke="#C98444" stroke-width="7" stroke-linecap="round" fill="none" />
+            
+            <!-- Cuerpo -->
+            <path d="M 180 135 Q 170 175 180 210 Q 210 215 230 210 Q 235 165 220 135 Z" fill="#E8B278" />
+            <!-- Patitas blancas -->
+            <ellipse cx="188" cy="212" rx="11" ry="6" fill="#FFF8EE" />
+            <ellipse cx="220" cy="212" rx="11" ry="6" fill="#FFF8EE" />
+
+            <!-- Orejas esponjosas -->
+            <path class="animate-ear-left" d="M 175 105 C 160 115, 155 150, 172 160 C 180 162, 182 135, 180 112 Z" fill="#C98444" />
+            <path class="animate-ear-right" d="M 225 105 C 240 115, 245 150, 228 160 C 220 162, 218 135, 220 112 Z" fill="#C98444" />
+
+            <!-- Cabeza perfilada suave -->
+            <circle cx="200" cy="110" r="27" fill="#F3C38B" />
+            <ellipse cx="195" cy="118" rx="15" ry="11" fill="#FFF8EE" />
+            
+            <!-- Nariz y boca -->
+            <polygon points="188,114 195,114 191,119" fill="#4A2E19" rx="2" />
+            <path d="M 191 119 L 191 123 M 188 122 Q 191 125 194 122" stroke="#4A2E19" stroke-width="1.5" />
+
+            <!-- Ojito mirando a su hermana -->
+            <g class="animate-blink">
+              <circle cx="188" cy="106" r="3.5" fill="#3D2314" />
+              <circle cx="206" cy="106" r="3" fill="#3D2314" />
+              <circle cx="187" cy="104.5" r="1" fill="#FFFFFF" />
+            </g>
+          </g>
+          
+          <!-- Mini ovillo de lana de crochet entre las dos -->
+          <circle cx="150" cy="208" r="8" fill="#DB608A" />
+          <path d="M 144 206 C 148 202, 152 212, 156 208" stroke="#FFFFFF" stroke-width="1.5" fill="none" />
+        </svg>
+      </div>
+
+      <div class="text-center mb-6">
+        <h1 class="font-heading text-3xl text-slate-800 font-bold tracking-tight">Tatacrochet 2027</h1>
+        <p class="text-slate-500 text-sm mt-1">Gestión Financiera & Pedidos Artesanales</p>
+      </div>
+
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase text-slate-500 mb-1">Contraseña de Acceso</label>
+          <div class="relative">
+            <input type="password" id="login-password" required
+                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all pr-10"
+                   placeholder="Ingresa tu clave de acceso...">
+            <button type="button" onclick="togglePasswordVisibility('login-password')" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600">
+              <i data-lucide="eye" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="login-error" class="hidden text-red-500 text-xs font-semibold text-center bg-red-50 p-2 rounded-lg border border-red-100">
+          Contraseña incorrecta. Inténtalo de nuevo.
+        </div>
+
+        <button type="submit" 
+                class="w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-semibold py-3 rounded-xl shadow-lg shadow-brand-500/30 transition duration-200 flex items-center justify-center gap-2">
+          <span>Ingresar al Sistema</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+
+      <div class="mt-6 text-center text-xs text-slate-400">
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">SeBas.123</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- APLICACIÓN PRINCIPAL (Oculta hasta Login) -->
+  <div id="app-content" class="hidden flex-1 flex flex-col">
+    
+    <!-- HEADER NAVBAR -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-rose-100 sticky top-0 z-30 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Logo y Mascotas -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-100 to-pink-200 flex items-center justify-center border border-brand-200 shadow-sm overflow-hidden p-1">
+            <svg class="w-full h-full" viewBox="0 0 320 240" fill="none">
+              <!-- Versión Miniatura Mascotas Header -->
+              <circle cx="100" cy="110" r="45" fill="#F3C38B" />
+              <path d="M 72 105 C 55 115, 50 155, 68 165 C 78 170, 82 140, 80 115 Z" fill="#B86D2C" />
+              <circle cx="100" cy="85" r="6" fill="#DB608A" />
+              <circle cx="200" cy="110" r="45" fill="#E8B278" />
+              <path d="M 225 105 C 240 115, 245 150, 228 160 C 220 162, 218 135, 220 112 Z" fill="#C98444" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="font-heading font-bold text-xl text-slate-800 leading-tight">Tatacrochet <span class="text-brand-500 font-normal text-sm">2027</span></h1>
+            <p class="text-xs text-slate-500">Contabilidad & Entregas</p>
+          </div>
+        </div>
+
+        <!-- Acciones Header & Exportación Global -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Dropdown Exportar Datos -->
+          <div class="relative">
+            <button id="export-menu-btn" onclick="toggleExportMenu()" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 transition">
+              <i data-lucide="download" class="w-4 h-4"></i>
+              <span class="hidden sm:inline">Exportar Datos</span>
+              <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+            </button>
+            <div id="export-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-100 py-2 z-50">
+              <div class="px-3 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Reportes para Descargar</div>
+              <button onclick="exportMonthlySummaryCSV()" class="w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 flex items-center gap-2">
+                <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-600"></i>
+                Resumen Ganancias y Meses (CSV)
+              </button>
+              <button onclick="exportExpensesCSV()" class="w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 flex items-center gap-2">
+                <i data-lucide="receipt" class="w-4 h-4 text-rose-600"></i>
+                Desglose de Gastos por Cuentas (CSV)
+              </button>
+              <button onclick="exportOrdersCSV()" class="w-full text-left px-4 py-2.5 text-xs text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 flex items-center gap-2">
+                <i data-lucide="package-check" class="w-4 h-4 text-brand-600"></i>
+                Listado Completo de Pedidos (CSV)
+              </button>
+            </div>
+          </div>
+
+          <button onclick="logout()" class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition" title="Cerrar Sesión">
+            <i data-lucide="log-out" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- METRICAS / KPIs DESTACADOS -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 flex-1 w-full">
+      
+      <!-- Grid de Tarjetas KPI Contables -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Total Ingresos -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ingresos Totales</span>
+            <div class="p-2 bg-emerald-50 rounded-xl text-emerald-600">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-slate-800" id="kpi-total-ingresos">$0</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpi-pedidos-count">0 pedidos en total</p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500"></div>
+        </div>
+
+        <!-- Re-Inversión Materiales -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Re-Inversión (20%)</span>
+            <div class="p-2 bg-amber-50 rounded-xl text-amber-600">
+              <i data-lucide="repeat" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-slate-800" id="kpi-reinversion">$0</div>
+          <p class="text-xs text-slate-500 mt-1">Fondo para insumos e hilos</p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-amber-500"></div>
+        </div>
+
+        <!-- Fondo Ayuda Mom -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Fondo Mom (30%)</span>
+            <div class="p-2 bg-rose-50 rounded-xl text-rose-600">
+              <i data-lucide="heart" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-slate-800" id="kpi-fondo-mom">$0</div>
+          <p class="text-xs text-slate-500 mt-1" id="kpi-mom-count">Aportes por ayuda de mamá</p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-rose-500"></div>
+        </div>
+
+        <!-- Ganancia Neta Tati -->
+        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ganancia Tati</span>
+            <div class="p-2 bg-brand-50 rounded-xl text-brand-600">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="text-2xl font-bold text-brand-600" id="kpi-ganancia-tati">$0</div>
+          <p class="text-xs text-slate-500 mt-1">Utilidad personal de Tati</p>
+          <div class="absolute bottom-0 left-0 right-0 h-1 bg-brand-500"></div>
+        </div>
+
+      </div>
+
+      <!-- BOTONES DE ACCIÓN RÁPIDA -->
+      <div class="flex flex-wrap items-center justify-between gap-4 bg-gradient-to-r from-brand-500 to-rose-500 rounded-3xl p-6 text-white shadow-lg">
+        <div>
+          <h2 class="font-heading text-2xl font-bold">Gestión de Pedidos & Egresos</h2>
+          <p class="text-rose-100 text-sm">Registra nuevos pedidos, costos opcionales de envío y controla los gastos operacionales.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <button onclick="openModal('order-modal')" class="bg-white text-brand-600 hover:bg-rose-50 font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 text-sm">
+            <i data-lucide="plus-circle" class="w-4 h-4"></i>
+            Nuevo Pedido
+          </button>
+          <button onclick="openModal('expense-modal')" class="bg-brand-700/60 hover:bg-brand-800/80 text-white border border-brand-300/30 font-semibold px-4 py-2.5 rounded-xl transition flex items-center gap-2 text-sm">
+            <i data-lucide="minus-circle" class="w-4 h-4"></i>
+            Registrar Gasto
+          </button>
+        </div>
+      </div>
+
+      <!-- SECCIÓN: TABLA DE PEDIDOS -->
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+        <div class="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h3 class="font-heading font-bold text-lg text-slate-800">Listado de Pedidos</h3>
+            <p class="text-xs text-slate-500">Lleva el control de clientes, entregas y cobros de envío</p>
+          </div>
+          
+          <!-- Filtros de Estado -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-semibold text-slate-400">Filtrar:</span>
+            <select id="filter-status" onchange="renderOrdersTable()" class="text-xs border border-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="all">Todos los Pedidos</option>
+              <option value="pending">Solo Pendientes</option>
+              <option value="delivered">Solo Entregados</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-slate-600">
+            <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold tracking-wider">
+              <tr>
+                <th class="py-3.5 px-6">Cliente & Fecha</th>
+                <th class="py-3.5 px-6">Producto / Descripción</th>
+                <th class="py-3.5 px-6 text-right">Valor Pedido</th>
+                <th class="py-3.5 px-6 text-center">Detalle Envío <span class="text-[10px] font-normal text-slate-400 block">(Informativo)</span></th>
+                <th class="py-3.5 px-6 text-center">¿Ayudó Mom?</th>
+                <th class="py-3.5 px-6 text-center">Estado Entrega</th>
+                <th class="py-3.5 px-6 text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="orders-tbody" class="divide-y divide-slate-100">
+              <!-- Renderizado dinámico JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- GRID DE DOS COLUMNAS: RESUMEN MENSUAL Y REGISTRO DE GASTOS -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- RESUMEN MENSUAL (2 Columnas en LG) -->
+        <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-slate-800">Resumen Consolidado por Mes</h3>
+              <p class="text-xs text-slate-500">Distribución automática de fondos y gastos de operación</p>
+            </div>
+            <button onclick="exportMonthlySummaryCSV()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Exportar Meses
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-600">
+              <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold">
+                <tr>
+                  <th class="py-3 px-4">Mes</th>
+                  <th class="py-3 px-4 text-right">Ingresos</th>
+                  <th class="py-3 px-4 text-right">Re-inv (20%)</th>
+                  <th class="py-3 px-4 text-right">Mom (30%)</th>
+                  <th class="py-3 px-4 text-right">Tati (50% o 80%)</th>
+                  <th class="py-3 px-4 text-right text-rose-600">Gastos</th>
+                  <th class="py-3 px-4 text-right font-bold">Balance Neto</th>
+                </tr>
+              </thead>
+              <tbody id="monthly-tbody" class="divide-y divide-slate-100">
+                <!-- Renderizado dinámico -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- LISTADO DE GASTOS Y EGRESOS (1 Columna en LG) -->
+        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-slate-800">Registro de Gastos</h3>
+              <p class="text-xs text-slate-500">Egresos descontados del balance</p>
+            </div>
+            <button onclick="exportExpensesCSV()" class="text-xs bg-rose-50 hover:bg-rose-100 text-rose-700 font-medium px-2.5 py-1.5 rounded-lg transition flex items-center gap-1">
+              <i data-lucide="file-output" class="w-3.5 h-3.5"></i> CSV
+            </button>
+          </div>
+
+          <div class="space-y-3 max-h-80 overflow-y-auto pr-1" id="expenses-list">
+            <!-- Renderizado dinámico de gastos -->
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER CON ILUSTRACIÓN DE PERRITAS MASCOTAS -->
+    <footer class="bg-white border-t border-rose-100 mt-12 py-6 text-slate-500 text-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="font-heading font-bold text-slate-700 text-sm">Tatacrochet 2027</span>
+          <span class="text-slate-300">•</span>
+          <span>Hecho con amor y tejidos artesanales</span>
+        </div>
+        <div class="flex items-center gap-2 text-slate-400">
+          <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
+          <span>Inspirado en nuestras Cocker Spaniel de la familia</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- MODAL: REGISTRAR / EDITAR PEDIDO -->
+  <div id="order-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-xl max-w-lg w-full p-6 space-y-4 relative border border-rose-100 animate-in fade-in zoom-in duration-200">
+      <button onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+        <div class="p-2.5 bg-brand-50 text-brand-600 rounded-2xl">
+          <i data-lucide="package-plus" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-lg text-slate-800" id="order-modal-title">Nuevo Pedido</h3>
+          <p class="text-xs text-slate-500">Ingresa los datos correspondientes de la venta</p>
+        </div>
+      </div>
+
+      <form id="order-form" onsubmit="handleSaveOrder(event)" class="space-y-4">
+        <input type="hidden" id="order-id">
+        
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Nombre del Cliente *</label>
+            <input type="text" id="order-client" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none" placeholder="Ej: María Clara">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Fecha del Pedido *</label>
+            <input type="date" id="order-date" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Descripción del Producto *</label>
+          <input type="text" id="order-desc" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none" placeholder="Ej: Amigurumi Osito 25cm + Llavero">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Valor del Pedido ($ COP) *</label>
+          <input type="number" id="order-value" required min="0" step="1000" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none" placeholder="120000">
+        </div>
+
+        <!-- SECCIÓN DE ENVÍO INFORMATIVO (NO AFECTA CONTABILIDAD) -->
+        <div class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-800 flex items-center gap-1.5">
+              <i data-lucide="truck" class="w-4 h-4 text-amber-600"></i>
+              Detalle de Envío (Informativo)
+            </span>
+            <span class="text-[10px] text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full font-medium">No afecta contabilidad</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-1">Costo Envío ($)</label>
+              <input type="number" id="order-shipping-cost" min="0" step="500" class="w-full px-3 py-1.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white" placeholder="Ej: 12000">
+            </div>
+            <div>
+              <label class="block text-[11px] font-semibold text-slate-600 mb-1">¿Envío Pagado por Cliente?</label>
+              <select id="order-shipping-paid" class="w-full px-3 py-1.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+                <option value="pending">Pendiente por Cobrar</option>
+                <option value="paid">Pagado por Cliente</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkbox Ayuda Mom -->
+        <div class="flex items-center gap-3 p-3 bg-pink-50/50 rounded-2xl border border-pink-100">
+          <input type="checkbox" id="order-mom" class="w-4 h-4 text-brand-600 rounded focus:ring-brand-500">
+          <label for="order-mom" class="text-xs font-medium text-slate-700 cursor-pointer">
+            ¿Mamá ayudó en la elaboración de este pedido? 
+            <span class="block text-[10px] text-slate-400 font-normal">(Destinará el 30% al Fondo de Mamá)</span>
+          </label>
+        </div>
+
+        <!-- Estado de Entrega -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Estado de Entrega</label>
+          <select id="order-status" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+            <option value="pending">Pendiente de Entrega</option>
+            <option value="delivered">Entregado / Finalizado</option>
+          </select>
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeModal('order-modal')" class="px-4 py-2 text-xs font-semibold text-slate-500 hover:bg-slate-100 rounded-xl transition">Cancelar</button>
+          <button type="submit" class="px-5 py-2 text-xs font-semibold bg-brand-500 hover:bg-brand-600 text-white rounded-xl shadow-md shadow-brand-500/20 transition">Guardar Pedido</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: REGISTRAR GASTO -->
+  <div id="expense-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-xl max-w-md w-full p-6 space-y-4 relative border border-rose-100 animate-in fade-in zoom-in duration-200">
+      <button onclick="closeModal('expense-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+        <div class="p-2.5 bg-rose-50 text-rose-600 rounded-2xl">
+          <i data-lucide="receipt" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-lg text-slate-800">Registrar Gasto</h3>
+          <p class="text-xs text-slate-500">Descuenta valores de las cuentas contables</p>
+        </div>
+      </div>
+
+      <form id="expense-form" onsubmit="handleSaveExpense(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Fecha del Gasto *</label>
+          <input type="date" id="expense-date" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Cuenta a Afectar *</label>
+          <select id="expense-account" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none">
+            <option value="reinversion">Re-inversión / Materiales (50%)</option>
+            <option value="mom">Fondo Mom (25%)</option>
+            <option value="tati">Ganancia Tati</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Descripción del Gasto *</label>
+          <input type="text" id="expense-desc" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="Ej: Compra de hilaza de algodón 500g">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Monto / Valor ($ COP) *</label>
+          <input type="number" id="expense-value" required min="0" step="500" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="35000">
+        </div>
+
+        <div class="pt-2 flex items-center justify-end gap-3">
+          <button type="button" onclick="closeModal('expense-modal')" class="px-4 py-2 text-xs font-semibold text-slate-500 hover:bg-slate-100 rounded-xl transition">Cancelar</button>
+          <button type="submit" class="px-5 py-2 text-xs font-semibold bg-rose-600 hover:bg-rose-700 text-white rounded-xl shadow-md shadow-rose-600/20 transition">Guardar Gasto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL DE PREGUNTA RÁPIDA "MARCAR COMO ENTREGADO" -->
+  <div id="delivered-prompt-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-xl max-w-sm w-full p-6 space-y-4 text-center border border-rose-100">
+      <div class="w-12 h-12 bg-pink-100 text-brand-600 rounded-full flex items-center justify-center mx-auto">
+        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+      </div>
+      <div>
+        <h3 class="font-heading font-bold text-lg text-slate-800">¿Ayudó Mamá en este pedido?</h3>
+        <p class="text-xs text-slate-500 mt-1">Al marcarlo como entregado, indica si tu mamá apoyó en el proceso para calcular el 30% de su fondo.</p>
+      </div>
+
+      <div class="flex flex-col gap-2 pt-2">
+        <button onclick="confirmDelivered(true)" class="w-full py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs rounded-xl shadow transition">
+          Sí, Mamá ayudó (20% Reinv, 30% Mom, 50% Tati)
+        </button>
+        <button onclick="confirmDelivered(false)" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl transition">
+          No, solo Tati (20% Reinv, 80% Tati)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT DE LÓGICA CONTABLE Y EXPORTACIÓN -->
+  <script>
+    // ESTADO DE LA APLICACIÓN
+    let orders = [];
+    let expenses = [];
+    let currentPendingOrderIdForDelivery = null;
+
+    // DATOS DE PRUEBA INICIALES
+    const initialOrders = [
+      { id: '1', client: 'Camila Torres', date: '2027-01-10', desc: 'Pesebre en Crochet Completo', value: 220000, momHelped: true, status: 'delivered', shippingCost: 15000, shippingPaid: 'paid' },
+      { id: '2', client: 'Andrea Restrepo', date: '2027-01-18', desc: 'Ramo de Flores Eternas (12 und)', value: 140000, momHelped: false, status: 'delivered', shippingCost: 12000, shippingPaid: 'paid' },
+      { id: '3', client: 'Lucía Gómez', date: '2027-02-05', desc: 'Muñeca Personalizada 30cm', value: 160000, momHelped: true, status: 'delivered', shippingCost: 10000, shippingPaid: 'pending' },
+      { id: '4', client: 'Mariana Silva', date: '2027-02-14', desc: 'Pareja de Oso San Valentín', value: 95000, momHelped: false, status: 'pending', shippingCost: 8000, shippingPaid: 'pending' }
+    ];
+
+    const initialExpenses = [
+      { id: 'e1', date: '2027-01-12', account: 'reinversion', desc: 'Madejas Hilo Algodón Mercerizado', value: 45000 },
+      { id: 'e2', date: '2027-01-20', account: 'mom', desc: 'Abono detalle Mamá', value: 20000 }
+    ];
+
+    // INICIALIZACIÓN
+    window.onload = function() {
+      lucide.createIcons();
+      loadFromLocalStorage();
+      setTodayDates();
+      
+      // Manejador Formulario Login
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const pwd = document.getElementById('login-password').value;
+        if (pwd === 'SeBas.123') {
+          document.getElementById('login-screen').classList.add('hidden');
+          document.getElementById('app-content').classList.remove('hidden');
+          renderAll();
+        } else {
+          document.getElementById('login-error').classList.remove('hidden');
+        }
+      });
+    };
+
+    function setTodayDates() {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('order-date').value = today;
+      document.getElementById('expense-date').value = today;
+    }
+
+    function togglePasswordVisibility(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    // PERSISTENCIA LOCALSTORAGE
+    function loadFromLocalStorage() {
+      const savedOrders = localStorage.getItem('tatacrochet_orders_2027');
+      const savedExpenses = localStorage.getItem('tatacrochet_expenses_2027');
+      
+      orders = savedOrders ? JSON.parse(savedOrders) : initialOrders;
+      expenses = savedExpenses ? JSON.parse(savedExpenses) : initialExpenses;
+    }
+
+    function saveToLocalStorage() {
+      localStorage.setItem('tatacrochet_orders_2027', JSON.stringify(orders));
+      localStorage.setItem('tatacrochet_expenses_2027', JSON.stringify(expenses));
+    }
+
+    // NAVEGACIÓN Y EXPORTACIÓN MENU
+    function toggleExportMenu() {
+      const drop = document.getElementById('export-dropdown');
+      drop.classList.toggle('hidden');
+    }
+
+    // Cierra menús desplegables al hacer clic fuera
+    window.addEventListener('click', function(e) {
+      const btn = document.getElementById('export-menu-btn');
+      const drop = document.getElementById('export-dropdown');
+      if (btn && drop && !btn.contains(e.target) && !drop.contains(e.target)) {
+        drop.classList.add('hidden');
+      }
+    });
+
+    function logout() {
+      document.getElementById('app-content').classList.add('hidden');
+      document.getElementById('login-screen').classList.remove('hidden');
+      document.getElementById('login-password').value = '';
+    }
+
+    // RENDERS PRINCIPALES
+    function renderAll() {
+      renderKPIs();
+      renderOrdersTable();
+      renderMonthlySummary();
+      renderExpensesList();
+      lucide.createIcons();
+    }
+
+    // CÁLCULOS Y KPIs
+    function calculateTotals() {
+      let totalIngresos = 0;
+      let totalReinversion = 0;
+      let totalMom = 0;
+      let totalTati = 0;
+      let momOrderCount = 0;
+
+      orders.forEach(o => {
+        // Solamente computamos contablemente pedidos ENTREGADOS
+        if (o.status === 'delivered') {
+          const val = Number(o.value) || 0;
+          totalIngresos += val;
+          totalReinversion += val * 0.20;
+
+          if (o.momHelped) {
+            totalMom += val * 0.30;
+            totalTati += val * 0.50;
+            momOrderCount++;
+          } else {
+            totalTati += val * 0.70;
+          }
+        }
+      });
+
+      // Descontar gastos por cuenta
+      let totalExpenses = 0;
+      expenses.forEach(e => {
+        const val = Number(e.value) || 0;
+        totalExpenses += val;
+        if (e.account === 'reinversion') totalReinversion -= val;
+        if (e.account === 'mom') totalMom -= val;
+        if (e.account === 'tati') totalTati -= val;
+      });
+
+      return {
+        totalIngresos,
+        totalReinversion,
+        totalMom,
+        totalTati,
+        totalExpenses,
+        momOrderCount,
+        deliveredOrdersCount: orders.filter(o => o.status === 'delivered').length
+      };
+    }
+
+    function renderKPIs() {
+      const totals = calculateTotals();
+      document.getElementById('kpi-total-ingresos').textContent = formatCOP(totals.totalIngresos);
+      document.getElementById('kpi-pedidos-count').textContent = `${totals.deliveredOrdersCount} de ${orders.length} pedidos entregados`;
+      
+      document.getElementById('kpi-reinversion').textContent = formatCOP(totals.totalReinversion);
+      document.getElementById('kpi-fondo-mom').textContent = formatCOP(totals.totalMom);
+      document.getElementById('kpi-mom-count').textContent = `${totals.momOrderCount} pedidos con ayuda de mamá`;
+      
+      document.getElementById('kpi-ganancia-tati').textContent = formatCOP(totals.totalTati);
+    }
+
+    // TABLA DE PEDIDOS
+    function renderOrdersTable() {
+      const tbody = document.getElementById('orders-tbody');
+      const filter = document.getElementById('filter-status').value;
+      tbody.innerHTML = '';
+
+      let filtered = orders;
+      if (filter === 'pending') filtered = orders.filter(o => o.status === 'pending');
+      if (filter === 'delivered') filtered = orders.filter(o => o.status === 'delivered');
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" class="py-8 text-center text-slate-400 text-xs">
+              No hay pedidos registrados en esta sección.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      filtered.forEach(o => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50/80 transition";
+
+        const isDelivered = o.status === 'delivered';
+        const shippingVal = Number(o.shippingCost) || 0;
+        const shippingPaid = o.shippingPaid === 'paid';
+
+        tr.innerHTML = `
+          <td class="py-3.5 px-6">
+            <div class="font-semibold text-slate-800">${escapeHtml(o.client)}</div>
+            <div class="text-[11px] text-slate-400">${o.date}</div>
+          </td>
+          <td class="py-3.5 px-6 font-medium text-slate-700">${escapeHtml(o.desc)}</td>
+          <td class="py-3.5 px-6 text-right font-bold text-slate-800">${formatCOP(o.value)}</td>
+          
+          <!-- DETALLE ENVÍO (INFORMATIVO) -->
+          <td class="py-3.5 px-6 text-center">
+            ${shippingVal > 0 ? `
+              <div class="inline-flex flex-col items-center">
+                <span class="text-xs font-semibold text-slate-700">${formatCOP(shippingVal)}</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full font-medium ${shippingPaid ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                  ${shippingPaid ? 'Envío Pagado' : 'Envío Pendiente'}
+                </span>
+              </div>
+            ` : `
+              <span class="text-xs text-slate-300">—</span>
+            `}
+          </td>
+
+          <!-- ¿AYUDÓ MOM? -->
+          <td class="py-3.5 px-6 text-center">
+            ${o.momHelped ? `
+              <span class="inline-flex items-center gap-1 text-xs text-rose-600 bg-rose-50 px-2.5 py-1 rounded-full font-medium">
+                <i data-lucide="heart" class="w-3 h-3 fill-rose-500"></i> Sí
+              </span>
+            ` : `
+              <span class="text-xs text-slate-400">No</span>
+            `}
+          </td>
+
+          <!-- ESTADO ENTREGA -->
+          <td class="py-3.5 px-6 text-center">
+            ${isDelivered ? `
+              <span class="inline-flex items-center gap-1 text-xs text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-medium">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Entregado
+              </span>
+            ` : `
+              <button onclick="promptDelivered('${o.id}')" class="text-xs text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-full font-semibold transition flex items-center gap-1 mx-auto">
+                <i data-lucide="clock" class="w-3.5 h-3.5"></i> Marcar Entregado
+              </button>
+            `}
+          </td>
+
+          <!-- ACCIONES -->
+          <td class="py-3.5 px-6 text-right space-x-1">
+            <button onclick="editOrder('${o.id}')" class="p-1.5 text-slate-400 hover:text-brand-600 rounded-lg hover:bg-slate-100 transition" title="Editar">
+              <i data-lucide="pencil" class="w-4 h-4"></i>
+            </button>
+            <button onclick="deleteOrder('${o.id}')" class="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-slate-100 transition" title="Eliminar">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // RESUMEN MENSUAL CONSOLIDADO
+    function renderMonthlySummary() {
+      const tbody = document.getElementById('monthly-tbody');
+      tbody.innerHTML = '';
+
+      // Agrupar por YYYY-MM
+      const monthMap = {};
+
+      orders.forEach(o => {
+        if (o.status !== 'delivered') return;
+        const monthKey = o.date.substring(0, 7); // YYYY-MM
+        if (!monthMap[monthKey]) {
+          monthMap[monthKey] = { ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
+        }
+        const val = Number(o.value) || 0;
+        monthMap[monthKey].ingresos += val;
+        monthMap[monthKey].reinversion += val * 0.50;
+
+        if (o.momHelped) {
+          monthMap[monthKey].mom += val * 0.25;
+          monthMap[monthKey].tati += val * 0.25;
+        } else {
+          monthMap[monthKey].tati += val * 0.50;
+        }
+      });
+
+      expenses.forEach(e => {
+        const monthKey = e.date.substring(0, 7);
+        if (!monthMap[monthKey]) {
+          monthMap[monthKey] = { ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
+        }
+        monthMap[monthKey].gastos += Number(e.value) || 0;
+      });
+
+      const sortedMonths = Object.keys(monthMap).sort().reverse();
+
+      if (sortedMonths.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="7" class="py-6 text-center text-slate-400 text-xs">
+              Sin datos registrados de entregas o gastos aún.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      sortedMonths.forEach(mKey => {
+        const data = monthMap[mKey];
+        const netBalance = data.ingresos - data.gastos;
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50 transition";
+
+        tr.innerHTML = `
+          <td class="py-3 px-4 font-semibold text-slate-800">${formatMonthLabel(mKey)}</td>
+          <td class="py-3 px-4 text-right font-medium text-slate-700">${formatCOP(data.ingresos)}</td>
+          <td class="py-3 px-4 text-right text-slate-600">${formatCOP(data.reinversion)}</td>
+          <td class="py-3 px-4 text-right text-slate-600">${formatCOP(data.mom)}</td>
+          <td class="py-3 px-4 text-right text-slate-600">${formatCOP(data.tati)}</td>
+          <td class="py-3 px-4 text-right text-rose-600 font-medium">-${formatCOP(data.gastos)}</td>
+          <td class="py-3 px-4 text-right font-bold ${netBalance >= 0 ? 'text-emerald-600' : 'text-rose-600'}">${formatCOP(netBalance)}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // LISTADO DE GASTOS
+    function renderExpensesList() {
+      const container = document.getElementById('expenses-list');
+      container.innerHTML = '';
+
+      if (expenses.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-6 text-slate-400 text-xs">
+            No se han registrado gastos.
+          </div>
+        `;
+        return;
+      }
+
+      const sorted = [...expenses].sort((a,b) => b.date.localeCompare(a.date));
+
+      sorted.forEach(e => {
+        const div = document.createElement('div');
+        div.className = "flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100 hover:border-rose-100 transition";
+        
+        let accountName = "Re-Inversión";
+        if (e.account === 'mom') accountName = "Fondo Mom";
+        if (e.account === 'tati') accountName = "Ganancia Tati";
+
+        div.innerHTML = `
+          <div>
+            <div class="text-xs font-semibold text-slate-800">${escapeHtml(e.desc)}</div>
+            <div class="text-[10px] text-slate-400 flex items-center gap-2 mt-0.5">
+              <span>${e.date}</span>
+              <span>•</span>
+              <span class="text-rose-600 font-medium">${accountName}</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-xs text-rose-600">-${formatCOP(e.value)}</span>
+            <button onclick="deleteExpense('${e.id}')" class="p-1 text-slate-300 hover:text-rose-600 rounded">
+              <i data-lucide="x" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // EVENTOS DE MANEJO DE FORMULARIOS Y MODALES
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function handleSaveOrder(e) {
+      e.preventDefault();
+      const id = document.getElementById('order-id').value;
+      const client = document.getElementById('order-client').value.trim();
+      const date = document.getElementById('order-date').value;
+      const desc = document.getElementById('order-desc').value.trim();
+      const value = Number(document.getElementById('order-value').value);
+      const momHelped = document.getElementById('order-mom').checked;
+      const status = document.getElementById('order-status').value;
+      
+      const shippingCost = Number(document.getElementById('order-shipping-cost').value) || 0;
+      const shippingPaid = document.getElementById('order-shipping-paid').value;
+
+      if (id) {
+        // Editar
+        const index = orders.findIndex(o => o.id === id);
+        if (index !== -1) {
+          orders[index] = { ...orders[index], client, date, desc, value, momHelped, status, shippingCost, shippingPaid };
+        }
+      } else {
+        // Crear
+        orders.unshift({
+          id: Date.now().toString(),
+          client, date, desc, value, momHelped, status, shippingCost, shippingPaid
+        });
+      }
+
+      saveToLocalStorage();
+      closeModal('order-modal');
+      resetOrderForm();
+      renderAll();
+    }
+
+    function resetOrderForm() {
+      document.getElementById('order-id').value = '';
+      document.getElementById('order-client').value = '';
+      document.getElementById('order-desc').value = '';
+      document.getElementById('order-value').value = '';
+      document.getElementById('order-mom').checked = false;
+      document.getElementById('order-status').value = 'pending';
+      document.getElementById('order-shipping-cost').value = '';
+      document.getElementById('order-shipping-paid').value = 'pending';
+      document.getElementById('order-modal-title').textContent = 'Nuevo Pedido';
+      setTodayDates();
+    }
+
+    function editOrder(id) {
+      const o = orders.find(item => item.id === id);
+      if (!o) return;
+
+      document.getElementById('order-id').value = o.id;
+      document.getElementById('order-client').value = o.client;
+      document.getElementById('order-date').value = o.date;
+      document.getElementById('order-desc').value = o.desc;
+      document.getElementById('order-value').value = o.value;
+      document.getElementById('order-mom').checked = o.momHelped;
+      document.getElementById('order-status').value = o.status;
+      document.getElementById('order-shipping-cost').value = o.shippingCost || '';
+      document.getElementById('order-shipping-paid').value = o.shippingPaid || 'pending';
+
+      document.getElementById('order-modal-title').textContent = 'Editar Pedido';
+      openModal('order-modal');
+    }
+
+    function deleteOrder(id) {
+      if (confirm('¿Estás segura de eliminar este pedido?')) {
+        orders = orders.filter(o => o.id !== id);
+        saveToLocalStorage();
+        renderAll();
+      }
+    }
+
+    function promptDelivered(id) {
+      currentPendingOrderIdForDelivery = id;
+      openModal('delivered-prompt-modal');
+    }
+
+    function confirmDelivered(momHelped) {
+      if (!currentPendingOrderIdForDelivery) return;
+      const index = orders.findIndex(o => o.id === currentPendingOrderIdForDelivery);
+      if (index !== -1) {
+        orders[index].status = 'delivered';
+        orders[index].momHelped = momHelped;
+        saveToLocalStorage();
+        renderAll();
+      }
+      closeModal('delivered-prompt-modal');
+      currentPendingOrderIdForDelivery = null;
+    }
+
+    function handleSaveExpense(e) {
+      e.preventDefault();
+      const date = document.getElementById('expense-date').value;
+      const account = document.getElementById('expense-account').value;
+      const desc = document.getElementById('expense-desc').value.trim();
+      const value = Number(document.getElementById('expense-value').value);
+
+      expenses.unshift({
+        id: 'e_' + Date.now().toString(),
+        date, account, desc, value
+      });
+
+      saveToLocalStorage();
+      closeModal('expense-modal');
+      document.getElementById('expense-desc').value = '';
+      document.getElementById('expense-value').value = '';
+      renderAll();
+    }
+
+    function deleteExpense(id) {
+      expenses = expenses.filter(e => e.id !== id);
+      saveToLocalStorage();
+      renderAll();
+    }
+
+    // EXPORTACIÓN A EXCEL / CSV
+    function downloadCSV(csvContent, filename) {
+      const blob = new Blob(["\ufeff" + csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", filename);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // 1. Exportar Resumen Mensual
+    function exportMonthlySummaryCSV() {
+      const monthMap = {};
+
+      orders.forEach(o => {
+        if (o.status !== 'delivered') return;
+        const monthKey = o.date.substring(0, 7);
+        if (!monthMap[monthKey]) {
+          monthMap[monthKey] = { count: 0, ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
+        }
+        const val = Number(o.value) || 0;
+        monthMap[monthKey].count++;
+        monthMap[monthKey].ingresos += val;
+        monthMap[monthKey].reinversion += val * 0.50;
+
+        if (o.momHelped) {
+          monthMap[monthKey].mom += val * 0.25;
+          monthMap[monthKey].tati += val * 0.25;
+        } else {
+          monthMap[monthKey].tati += val * 0.50;
+        }
+      });
+
+      expenses.forEach(e => {
+        const monthKey = e.date.substring(0, 7);
+        if (!monthMap[monthKey]) {
+          monthMap[monthKey] = { count: 0, ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
+        }
+        monthMap[monthKey].gastos += Number(e.value) || 0;
+      });
+
+      let csv = "Mes,Pedidos Entregados,Ingresos Totales,Re-Inversión (50%),Fondo Mom (25%),Ganancia Tati,Gastos Operativos,Balance Neto\n";
+
+      Object.keys(monthMap).sort().reverse().forEach(m => {
+        const d = monthMap[m];
+        const net = d.ingresos - d.gastos;
+        csv += `"${formatMonthLabel(m)}",${d.count},${d.ingresos},${d.reinversion},${d.mom},${d.tati},${d.gastos},${net}\n`;
+      });
+
+      downloadCSV(csv, `Tatacrochet_Resumen_Mensual_2027.csv`);
+    }
+
+    // 2. Exportar Gastos por Cuenta
+    function exportExpensesCSV() {
+      let csv = "Fecha,Cuenta,Descripcion,Valor_COP\n";
+      expenses.forEach(e => {
+        let accountText = "Re-inversion";
+        if (e.account === 'mom') accountText = "Fondo Mom";
+        if (e.account === 'tati') accountText = "Ganancia Tati";
+        csv += `"${e.date}","${accountText}","${e.desc.replace(/"/g, '""')}",${e.value}\n`;
+      });
+
+      downloadCSV(csv, `Tatacrochet_Desglose_Gastos_2027.csv`);
+    }
+
+    // 3. Exportar Todos los Pedidos
+    function exportOrdersCSV() {
+      let csv = "ID,Cliente,Fecha,Producto,Valor_Pedido,Estado_Entrega,Ayuda_Mom,Costo_Envio,Estado_Envio_Cliente\n";
+      orders.forEach(o => {
+        csv += `"${o.id}","${o.client.replace(/"/g, '""')}","${o.date}","${o.desc.replace(/"/g, '""')}",${o.value},"${o.status === 'delivered' ? 'Entregado' : 'Pendiente'}","${o.momHelped ? 'Si' : 'No'}",${o.shippingCost || 0},"${o.shippingPaid === 'paid' ? 'Pagado' : 'Pendiente'}"\n`;
+      });
+
+      downloadCSV(csv, `Tatacrochet_Listado_Pedidos_2027.csv`);
+    }
+
+    // HELPERS DE FORMATO
+    function formatCOP(val) {
+      return new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        maximumFractionDigits: 0
+      }).format(val || 0);
+    }
+
+    function formatMonthLabel(mKey) {
+      const [year, month] = mKey.split('-');
+      const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      const monthIdx = parseInt(month, 10) - 1;
+      return `${months[monthIdx] || month} ${year}`;
+    }
+
+    function escapeHtml(str) {
+      return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+  </script>
+</body>
+</html>
