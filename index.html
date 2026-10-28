@@ -75,6 +75,10 @@
       50% { filter: drop-shadow(0 8px 20px rgba(219, 96, 138, 0.3)); }
     }
 
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
     .animate-ear-left { animation: earWiggleLeft 3.5s ease-in-out infinite; transform-origin: top right; }
     .animate-ear-right { animation: earWiggleRight 4s ease-in-out infinite; transform-origin: top left; }
     .animate-tail { animation: tailWag 1.8s ease-in-out infinite; transform-origin: bottom center; }
