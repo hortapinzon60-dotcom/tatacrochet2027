@@ -75,10 +75,6 @@
       50% { filter: drop-shadow(0 8px 20px rgba(219, 96, 138, 0.3)); }
     }
 
-    function escapeHtml(str) {
-      if (str === null || str === undefined) return '';
-      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-    }
     .animate-ear-left { animation: earWiggleLeft 3.5s ease-in-out infinite; transform-origin: top right; }
     .animate-ear-right { animation: earWiggleRight 4s ease-in-out infinite; transform-origin: top left; }
     .animate-tail { animation: tailWag 1.8s ease-in-out infinite; transform-origin: bottom center; }
@@ -183,7 +179,7 @@
       </form>
 
       <div class="mt-6 text-center text-xs text-slate-400">
-        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">:3</code>
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">SeBas.123</code>
       </div>
     </div>
   </div>
@@ -558,7 +554,7 @@
   </div>
 
   <script>
-    // URL ACTUALIZADA DE GOOGLE APPS SCRIPT
+    // URL DE TU SCRIPT DE GOOGLE
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzj6Z1Ea8uCG1SobLHDSPbQ26Gl3OOaCulx39GPIKmN4LMNWVXluWbrgXMyc25K9YNniw/exec";
 
     let orders = [];
@@ -622,8 +618,11 @@
 
         if (data.expenses) {
           expenses = data.expenses.map(e => ({
-            ...e,
-            value: Number(e.value) || 0
+            id: String(e.id || ''),
+            date: String(e.date || ''),
+            account: String(e.account || 'reinversion'),
+            value: Number(e.value) || 0,
+            desc: String(e.desc || '')
           }));
         } else {
           expenses = [];
@@ -632,7 +631,9 @@
         renderAll();
       } catch (err) {
         console.error("Error al cargar datos:", err);
-        alert("Ocurrió un error al cargar los datos desde la nube. Por favor verifica los permisos.");
+        orders = [];
+        expenses = [];
+        renderAll();
       } finally {
         showLoading(false);
       }
@@ -1015,7 +1016,8 @@
     }
 
     function escapeHtml(str) {
-      return (str || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      if (str === null || str === undefined) return '';
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
   </script>
 </body>
