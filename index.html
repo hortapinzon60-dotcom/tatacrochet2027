@@ -179,7 +179,7 @@
       </form>
 
       <div class="mt-6 text-center text-xs text-slate-400">
-        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">:3</code>
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">.:3.</code>
       </div>
     </div>
   </div>
@@ -254,13 +254,13 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm relative overflow-hidden">
           <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ingresos Totales</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Abonos / Ingresos Activos</span>
             <div class="p-2 bg-emerald-50 rounded-xl text-emerald-600">
               <i data-lucide="trending-up" class="w-5 h-5"></i>
             </div>
           </div>
           <div class="text-2xl font-bold text-slate-800" id="kpi-total-ingresos">$0</div>
-          <p class="text-xs text-slate-500 mt-1" id="kpi-pedidos-count">0 pedidos entregados</p>
+          <p class="text-xs text-slate-500 mt-1" id="kpi-pedidos-count">0 pedidos en total</p>
           <div class="absolute bottom-0 left-0 right-0 h-1 bg-emerald-500"></div>
         </div>
 
@@ -272,7 +272,7 @@
             </div>
           </div>
           <div class="text-2xl font-bold text-slate-800" id="kpi-reinversion">$0</div>
-          <p class="text-xs text-slate-500 mt-1">Fondo para insumos e hilos</p>
+          <p class="text-xs text-slate-500 mt-1">Calculado sobre abonos</p>
           <div class="absolute bottom-0 left-0 right-0 h-1 bg-amber-500"></div>
         </div>
 
@@ -305,7 +305,7 @@
       <div class="flex flex-wrap items-center justify-between gap-4 bg-gradient-to-r from-brand-500 to-rose-500 rounded-3xl p-6 text-white shadow-lg">
         <div>
           <h2 class="font-heading text-2xl font-bold">Gestión de Pedidos & Egresos</h2>
-          <p class="text-rose-100 text-sm">Registra nuevos pedidos, costos opcionales de envío y controla los gastos operacionales.</p>
+          <p class="text-rose-100 text-sm">Registra nuevos pedidos con abonos, costos de envío y controla los gastos operacionales.</p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
           <button onclick="openModal('order-modal')" class="bg-white text-brand-600 hover:bg-rose-50 font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 text-sm">
@@ -324,7 +324,7 @@
         <div class="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h3 class="font-heading font-bold text-lg text-slate-800">Listado de Pedidos</h3>
-            <p class="text-xs text-slate-500">Lleva el control de clientes, entregas y cobros de envío</p>
+            <p class="text-xs text-slate-500">Control de clientes, abonos, saldos pendientes y entregas</p>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-slate-400">Filtrar:</span>
@@ -342,7 +342,7 @@
               <tr>
                 <th class="py-3.5 px-6">Cliente & Fecha</th>
                 <th class="py-3.5 px-6">Producto / Descripción</th>
-                <th class="py-3.5 px-6 text-right">Valor Pedido</th>
+                <th class="py-3.5 px-6 text-right">Valor / Abono</th>
                 <th class="py-3.5 px-6 text-center">Detalle Envío</th>
                 <th class="py-3.5 px-6 text-center">¿Ayudó Mom?</th>
                 <th class="py-3.5 px-6 text-center">Estado Entrega</th>
@@ -361,7 +361,7 @@
           <div class="flex items-center justify-between border-b border-slate-100 pb-4">
             <div>
               <h3 class="font-heading font-bold text-lg text-slate-800">Resumen Consolidado por Mes</h3>
-              <p class="text-xs text-slate-500">Distribución automática de fondos y gastos de operación</p>
+              <p class="text-xs text-slate-500">Distribución de fondos basada en los abonos y pagos</p>
             </div>
             <button onclick="exportMonthlySummaryCSV()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
               <i data-lucide="download" class="w-3.5 h-3.5"></i> Exportar Meses
@@ -373,7 +373,7 @@
               <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold">
                 <tr>
                   <th class="py-3 px-4">Mes</th>
-                  <th class="py-3 px-4 text-right">Ingresos</th>
+                  <th class="py-3 px-4 text-right">Abonos Total</th>
                   <th class="py-3 px-4 text-right">Re-inv (20%)</th>
                   <th class="py-3 px-4 text-right">Mom (30%)</th>
                   <th class="py-3 px-4 text-right">Tati (50% o 80%)</th>
@@ -414,13 +414,13 @@
         </div>
         <div class="flex items-center gap-2 text-slate-400">
           <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
-          <span>Con mucho amor para mi princesa jeje</span>
+          <span>Inspirado en nuestras Cocker Spaniel de la familia</span>
         </div>
       </div>
     </footer>
   </div>
 
-  <!-- MODALES -->
+  <!-- MODAL DE PEDIDOS -->
   <div id="order-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl shadow-xl max-w-lg w-full p-6 space-y-4 relative border border-rose-100">
       <button onclick="closeModal('order-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
@@ -433,7 +433,7 @@
         </div>
         <div>
           <h3 class="font-heading font-bold text-lg text-slate-800" id="order-modal-title">Nuevo Pedido</h3>
-          <p class="text-xs text-slate-500">Ingresa los datos correspondientes de la venta</p>
+          <p class="text-xs text-slate-500">Registra el valor total y el abono inicial del cliente</p>
         </div>
       </div>
 
@@ -455,9 +455,15 @@
           <input type="text" id="order-desc" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Valor del Pedido ($ COP) *</label>
-          <input type="number" id="order-value" required min="0" step="1000" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Valor Total ($ COP) *</label>
+            <input type="number" id="order-value" required min="0" step="1000" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Abono Inicial ($ COP)</label>
+            <input type="number" id="order-advance" min="0" step="500" value="0" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-emerald-50/40 font-semibold text-emerald-800" placeholder="Ej: 20000">
+          </div>
         </div>
 
         <div class="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 space-y-3">
@@ -491,8 +497,8 @@
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">Estado de Entrega</label>
           <select id="order-status" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm">
-            <option value="pending">Pendiente de Entrega</option>
-            <option value="delivered">Entregado / Finalizado</option>
+            <option value="pending">Pendiente de Entrega (Se cuenta el abono actual)</option>
+            <option value="delivered">Entregado / Finalizado (Se cuenta el total del pedido)</option>
           </select>
         </div>
 
@@ -504,6 +510,7 @@
     </div>
   </div>
 
+  <!-- MODAL DE GASTOS -->
   <div id="expense-modal" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl shadow-xl max-w-md w-full p-6 space-y-4 relative border border-rose-100">
       <button onclick="closeModal('expense-modal')" class="absolute top-4 right-4 text-slate-400 p-1">
@@ -554,8 +561,7 @@
   </div>
 
   <script>
-    // URL DE TU SCRIPT DE GOOGLE
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzj6Z1Ea8uCG1SobLHDSPbQ26Gl3OOaCulx39GPIKmN4LMNWVXluWbrgXMyc25K9YNniw/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOa35qgPsaInDomXtkRdUjN3Cs030Dm2xssUMlp1Mt_Tsrbx_7ZYsqVUO7Chmd7yrAbA/exec";
 
     let orders = [];
     let expenses = [];
@@ -609,6 +615,7 @@
           orders = data.orders.map(o => ({
             ...o,
             value: Number(o.value) || 0,
+            advance: Number(o.advance !== undefined && o.advance !== "" ? o.advance : o.value) || 0,
             momHelped: o.momHelped === true || o.momHelped === "true",
             shippingCost: Number(o.shippingCost) || 0
           }));
@@ -654,25 +661,28 @@
     }
 
     function calculateTotals() {
-      let totalIngresos = 0;
+      let totalIngresosActivos = 0;
       let totalReinversion = 0;
       let totalMom = 0;
       let totalTati = 0;
       let momOrderCount = 0;
 
       orders.forEach(o => {
-        if (o.status === 'delivered') {
-          const val = Number(o.value) || 0;
-          totalIngresos += val;
-          totalReinversion += val * 0.20;
+        const valTotal = Number(o.value) || 0;
+        const advanceVal = Number(o.advance) || 0;
+        const isDelivered = o.status === 'delivered';
 
-          if (o.momHelped) {
-            totalMom += val * 0.30;
-            totalTati += val * 0.50;
-            momOrderCount++;
-          } else {
-            totalTati += val * 0.80;
-          }
+        const montoEfectivo = isDelivered ? valTotal : advanceVal;
+
+        totalIngresosActivos += montoEfectivo;
+        totalReinversion += montoEfectivo * 0.20;
+
+        if (o.momHelped) {
+          totalMom += montoEfectivo * 0.30;
+          totalTati += montoEfectivo * 0.50;
+          momOrderCount++;
+        } else {
+          totalTati += montoEfectivo * 0.80;
         }
       });
 
@@ -684,23 +694,23 @@
       });
 
       return {
-        totalIngresos,
+        totalIngresosActivos,
         totalReinversion,
         totalMom,
         totalTati,
         momOrderCount,
-        deliveredOrdersCount: orders.filter(o => o.status === 'delivered').length
+        totalOrdersCount: orders.length
       };
     }
 
     function renderKPIs() {
       const totals = calculateTotals();
-      document.getElementById('kpi-total-ingresos').textContent = formatCOP(totals.totalIngresos);
-      document.getElementById('kpi-pedidos-count').textContent = `${totals.deliveredOrdersCount} de ${orders.length} pedidos entregados`;
+      document.getElementById('kpi-total-ingresos').textContent = formatCOP(totals.totalIngresosActivos);
+      document.getElementById('kpi-pedidos-count').textContent = `${totals.totalOrdersCount} pedidos registrados`;
       
       document.getElementById('kpi-reinversion').textContent = formatCOP(totals.totalReinversion);
       document.getElementById('kpi-fondo-mom').textContent = formatCOP(totals.totalMom);
-      document.getElementById('kpi-mom-count').textContent = `${totals.momOrderCount} pedidos con ayuda de mamá`;
+      document.getElementById('kpi-mom-count').textContent = `${totals.momOrderCount} con ayuda de mamá`;
       
       document.getElementById('kpi-ganancia-tati').textContent = formatCOP(totals.totalTati);
     }
@@ -723,6 +733,9 @@
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-50/80 transition";
         const isDelivered = o.status === 'delivered';
+        const valTotal = Number(o.value) || 0;
+        const advanceVal = Number(o.advance) || 0;
+        const saldoPendiente = valTotal - advanceVal;
         const shippingVal = Number(o.shippingCost) || 0;
         const shippingPaid = o.shippingPaid === 'paid';
 
@@ -732,7 +745,11 @@
             <div class="text-[11px] text-slate-400">${o.date}</div>
           </td>
           <td class="py-3.5 px-6 font-medium text-slate-700">${escapeHtml(o.desc)}</td>
-          <td class="py-3.5 px-6 text-right font-bold text-slate-800">${formatCOP(o.value)}</td>
+          <td class="py-3.5 px-6 text-right">
+            <div class="font-bold text-slate-800">Total: ${formatCOP(valTotal)}</div>
+            <div class="text-xs text-emerald-600 font-semibold">Abono: ${formatCOP(advanceVal)}</div>
+            ${!isDelivered && saldoPendiente > 0 ? `<div class="text-[10px] text-amber-600 font-medium">Debe: ${formatCOP(saldoPendiente)}</div>` : ''}
+          </td>
           <td class="py-3.5 px-6 text-center">
             ${shippingVal > 0 ? `
               <div class="inline-flex flex-col items-center">
@@ -775,20 +792,21 @@
       const monthMap = {};
 
       orders.forEach(o => {
-        if (o.status !== 'delivered') return;
         const monthKey = o.date ? o.date.substring(0, 7) : 'Sin Fecha';
         if (!monthMap[monthKey]) {
           monthMap[monthKey] = { ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
         }
-        const val = Number(o.value) || 0;
-        monthMap[monthKey].ingresos += val;
-        monthMap[monthKey].reinversion += val * 0.20;
+        const isDelivered = o.status === 'delivered';
+        const montoEfectivo = isDelivered ? (Number(o.value) || 0) : (Number(o.advance) || 0);
+
+        monthMap[monthKey].ingresos += montoEfectivo;
+        monthMap[monthKey].reinversion += montoEfectivo * 0.20;
 
         if (o.momHelped) {
-          monthMap[monthKey].mom += val * 0.30;
-          monthMap[monthKey].tati += val * 0.50;
+          monthMap[monthKey].mom += montoEfectivo * 0.30;
+          monthMap[monthKey].tati += montoEfectivo * 0.50;
         } else {
-          monthMap[monthKey].tati += val * 0.80;
+          monthMap[monthKey].tati += montoEfectivo * 0.80;
         }
       });
 
@@ -879,6 +897,7 @@
         date: document.getElementById('order-date').value,
         desc: document.getElementById('order-desc').value.trim(),
         value: Number(document.getElementById('order-value').value),
+        advance: Number(document.getElementById('order-advance').value) || 0,
         momHelped: document.getElementById('order-mom').checked,
         status: document.getElementById('order-status').value,
         shippingCost: Number(document.getElementById('order-shipping-cost').value) || 0,
@@ -978,6 +997,7 @@
       document.getElementById('order-client').value = '';
       document.getElementById('order-desc').value = '';
       document.getElementById('order-value').value = '';
+      document.getElementById('order-advance').value = '0';
       document.getElementById('order-mom').checked = false;
       document.getElementById('order-status').value = 'pending';
       document.getElementById('order-shipping-cost').value = '';
@@ -995,6 +1015,7 @@
       document.getElementById('order-date').value = o.date;
       document.getElementById('order-desc').value = o.desc;
       document.getElementById('order-value').value = o.value;
+      document.getElementById('order-advance').value = o.advance !== undefined ? o.advance : o.value;
       document.getElementById('order-mom').checked = o.momHelped;
       document.getElementById('order-status').value = o.status;
       document.getElementById('order-shipping-cost').value = o.shippingCost || '';
