@@ -305,7 +305,7 @@
       <div class="flex flex-wrap items-center justify-between gap-4 bg-gradient-to-r from-brand-500 to-rose-500 rounded-3xl p-6 text-white shadow-lg">
         <div>
           <h2 class="font-heading text-2xl font-bold">Gestión de Pedidos & Egresos</h2>
-          <p class="text-rose-100 text-sm">Registra nuevos pedidos con abonos, costos de envío y controla los gastos operacionales.</p>
+          <p class="text-rose-100 text-sm">Registra nuevos pedidos con cantidad de ítems, abonos y control operacional.</p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
           <button onclick="openModal('order-modal')" class="bg-white text-brand-600 hover:bg-rose-50 font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 text-sm">
@@ -324,7 +324,7 @@
         <div class="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h3 class="font-heading font-bold text-lg text-slate-800">Listado de Pedidos</h3>
-            <p class="text-xs text-slate-500">Control de clientes, abonos, saldos pendientes y entregas</p>
+            <p class="text-xs text-slate-500">Control de clientes, cantidad de ítems, abonos y entregas</p>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-slate-400">Filtrar:</span>
@@ -341,7 +341,7 @@
             <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold tracking-wider">
               <tr>
                 <th class="py-3.5 px-6">Cliente & Fecha</th>
-                <th class="py-3.5 px-6">Producto / Descripción</th>
+                <th class="py-3.5 px-6">Producto / Ítems</th>
                 <th class="py-3.5 px-6 text-right">Valor / Abono</th>
                 <th class="py-3.5 px-6 text-center">Detalle Envío</th>
                 <th class="py-3.5 px-6 text-center">¿Ayudó Mom?</th>
@@ -414,7 +414,7 @@
         </div>
         <div class="flex items-center gap-2 text-slate-400">
           <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
-          <span>Con mucho amor para mi princesaa</span>
+          <span>Con mucho amor para mi princesaaa</span>
         </div>
       </div>
     </footer>
@@ -433,7 +433,7 @@
         </div>
         <div>
           <h3 class="font-heading font-bold text-lg text-slate-800" id="order-modal-title">Nuevo Pedido</h3>
-          <p class="text-xs text-slate-500">Registra el valor total y el abono inicial del cliente</p>
+          <p class="text-xs text-slate-500">Registra los datos, la cantidad de ítems y el abono</p>
         </div>
       </div>
 
@@ -450,9 +450,15 @@
           </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold text-slate-600 mb-1">Descripción del Producto *</label>
-          <input type="text" id="order-desc" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+        <div class="grid grid-cols-3 gap-3">
+          <div class="col-span-2">
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Descripción del Producto *</label>
+            <input type="text" id="order-desc" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Cant. Ítems *</label>
+            <input type="number" id="order-quantity" required min="1" value="1" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none font-semibold text-center">
+          </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
@@ -561,7 +567,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOa35qgPsaInDomXtkRdUjN3Cs030Dm2xssUMlp1Mt_Tsrbx_7ZYsqVUO7Chmd7yrAbA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLKkxte0GlnWrx1PnERbCZx-zDQ4hsI7Srv-8AGejKZPbhYnvS56EIqx-QFJ4dLCiAFg/exec";
 
     let orders = [];
     let expenses = [];
@@ -615,6 +621,7 @@
           orders = data.orders.map(o => ({
             ...o,
             value: Number(o.value) || 0,
+            quantity: Number(o.quantity !== undefined && o.quantity !== "" ? o.quantity : 1) || 1,
             advance: Number(o.advance !== undefined && o.advance !== "" ? o.advance : o.value) || 0,
             momHelped: o.momHelped === true || o.momHelped === "true",
             shippingCost: Number(o.shippingCost) || 0
@@ -735,6 +742,7 @@
         const isDelivered = o.status === 'delivered';
         const valTotal = Number(o.value) || 0;
         const advanceVal = Number(o.advance) || 0;
+        const qty = Number(o.quantity) || 1;
         const saldoPendiente = valTotal - advanceVal;
         const shippingVal = Number(o.shippingCost) || 0;
         const shippingPaid = o.shippingPaid === 'paid';
@@ -744,7 +752,10 @@
             <div class="font-semibold text-slate-800">${escapeHtml(o.client)}</div>
             <div class="text-[11px] text-slate-400">${o.date}</div>
           </td>
-          <td class="py-3.5 px-6 font-medium text-slate-700">${escapeHtml(o.desc)}</td>
+          <td class="py-3.5 px-6">
+            <div class="font-medium text-slate-700">${escapeHtml(o.desc)}</div>
+            <div class="text-xs text-brand-600 font-semibold mt-0.5">📦 ${qty} ${qty === 1 ? 'ítem' : 'ítems'}</div>
+          </td>
           <td class="py-3.5 px-6 text-right">
             <div class="font-bold text-slate-800">Total: ${formatCOP(valTotal)}</div>
             <div class="text-xs text-emerald-600 font-semibold">Abono: ${formatCOP(advanceVal)}</div>
@@ -896,6 +907,7 @@
         client: document.getElementById('order-client').value.trim(),
         date: document.getElementById('order-date').value,
         desc: document.getElementById('order-desc').value.trim(),
+        quantity: Number(document.getElementById('order-quantity').value) || 1,
         value: Number(document.getElementById('order-value').value),
         advance: Number(document.getElementById('order-advance').value) || 0,
         momHelped: document.getElementById('order-mom').checked,
@@ -996,6 +1008,7 @@
       document.getElementById('order-id').value = '';
       document.getElementById('order-client').value = '';
       document.getElementById('order-desc').value = '';
+      document.getElementById('order-quantity').value = '1';
       document.getElementById('order-value').value = '';
       document.getElementById('order-advance').value = '0';
       document.getElementById('order-mom').checked = false;
@@ -1014,6 +1027,7 @@
       document.getElementById('order-client').value = o.client;
       document.getElementById('order-date').value = o.date;
       document.getElementById('order-desc').value = o.desc;
+      document.getElementById('order-quantity').value = o.quantity !== undefined ? o.quantity : 1;
       document.getElementById('order-value').value = o.value;
       document.getElementById('order-advance').value = o.advance !== undefined ? o.advance : o.value;
       document.getElementById('order-mom').checked = o.momHelped;
