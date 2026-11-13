@@ -179,7 +179,7 @@
       </form>
 
       <div class="mt-6 text-center text-xs text-slate-400">
-        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">:3</code>
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono"> Jejeje </code>
       </div>
     </div>
   </div>
@@ -305,7 +305,7 @@
       <div class="flex flex-wrap items-center justify-between gap-4 bg-gradient-to-r from-brand-500 to-rose-500 rounded-3xl p-6 text-white shadow-lg">
         <div>
           <h2 class="font-heading text-2xl font-bold">Gestión de Pedidos & Egresos</h2>
-          <p class="text-rose-100 text-sm">Registra nuevos pedidos con cantidad de ítems, abonos y control operacional.</p>
+          <p class="text-rose-100 text-sm">Registra ventas, clientes, origen (Instagram, WhatsApp) y controla gastos.</p>
         </div>
         <div class="flex flex-wrap items-center gap-3">
           <button onclick="openModal('order-modal')" class="bg-white text-brand-600 hover:bg-rose-50 font-semibold px-4 py-2.5 rounded-xl shadow transition flex items-center gap-2 text-sm">
@@ -324,7 +324,7 @@
         <div class="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h3 class="font-heading font-bold text-lg text-slate-800">Listado de Pedidos</h3>
-            <p class="text-xs text-slate-500">Control de clientes, cantidad de ítems, abonos y entregas</p>
+            <p class="text-xs text-slate-500">Control de clientes, origen, fechas y entregas</p>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-semibold text-slate-400">Filtrar:</span>
@@ -340,7 +340,7 @@
           <table class="w-full text-left text-sm text-slate-600">
             <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold tracking-wider">
               <tr>
-                <th class="py-3.5 px-6">Cliente & Fecha</th>
+                <th class="py-3.5 px-6">Cliente & Fechas</th>
                 <th class="py-3.5 px-6">Producto / Ítems</th>
                 <th class="py-3.5 px-6 text-right">Valor / Abono</th>
                 <th class="py-3.5 px-6 text-center">Detalle Envío</th>
@@ -360,8 +360,8 @@
         <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-100 shadow-sm p-6 space-y-4">
           <div class="flex items-center justify-between border-b border-slate-100 pb-4">
             <div>
-              <h3 class="font-heading font-bold text-lg text-slate-800">Resumen Consolidado por Mes</h3>
-              <p class="text-xs text-slate-500">Distribución de fondos basada en los abonos y pagos</p>
+              <h3 class="font-heading font-bold text-lg text-slate-800">Resumen Consolidado por Mes (Según Entrega)</h3>
+              <p class="text-xs text-slate-500">Distribución de fondos basada en el mes en que se despacha</p>
             </div>
             <button onclick="exportMonthlySummaryCSV()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
               <i data-lucide="download" class="w-3.5 h-3.5"></i> Exportar Meses
@@ -372,7 +372,7 @@
             <table class="w-full text-left text-sm text-slate-600">
               <thead class="bg-slate-50 text-xs uppercase text-slate-400 font-semibold">
                 <tr>
-                  <th class="py-3 px-4">Mes</th>
+                  <th class="py-3 px-4">Mes de Entrega</th>
                   <th class="py-3 px-4 text-right">Abonos Total</th>
                   <th class="py-3 px-4 text-right">Re-inv (20%)</th>
                   <th class="py-3 px-4 text-right">Mom (30%)</th>
@@ -410,11 +410,11 @@
         <div class="flex items-center gap-3">
           <span class="font-heading font-bold text-slate-700 text-sm">Tatacrochet 2027</span>
           <span class="text-slate-300">•</span>
-          <span>Hecho con amor y tejidos artesanales</span>
+          <span>Hecho con amor jejeje </span>
         </div>
         <div class="flex items-center gap-2 text-slate-400">
           <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
-          <span>Con mucho amor para mi princesaaa</span>
+          <span>Con mucho amor para mi princesa </span>
         </div>
       </div>
     </footer>
@@ -433,7 +433,7 @@
         </div>
         <div>
           <h3 class="font-heading font-bold text-lg text-slate-800" id="order-modal-title">Nuevo Pedido</h3>
-          <p class="text-xs text-slate-500">Registra los datos, la cantidad de ítems y el abono</p>
+          <p class="text-xs text-slate-500">Registra todos los datos del nuevo cliente</p>
         </div>
       </div>
 
@@ -445,8 +445,24 @@
             <input type="text" id="order-client" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">Fecha del Pedido *</label>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Origen del Cliente *</label>
+            <select id="order-source" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+              <option value="instagram">Instagram</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="tiktok">TikTok</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Fecha de Pedido *</label>
             <input type="date" id="order-date" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">Fecha de Entrega *</label>
+            <input type="date" id="delivery-date" required class="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-brand-50/30 font-semibold text-brand-800">
           </div>
         </div>
 
@@ -567,7 +583,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyLKkxte0GlnWrx1PnERbCZx-zDQ4hsI7Srv-8AGejKZPbhYnvS56EIqx-QFJ4dLCiAFg/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzbUUsDKZF_-EfTdjUGttSmOdAVNzebcUdNz1Cglfk-AiCuGtjzuZ925ADI2VbmlMp3Yw/exec";
 
     let orders = [];
     let expenses = [];
@@ -592,6 +608,7 @@
     function setTodayDates() {
       const today = new Date().toISOString().split('T')[0];
       document.getElementById('order-date').value = today;
+      document.getElementById('delivery-date').value = today;
       document.getElementById('expense-date').value = today;
     }
 
@@ -620,6 +637,9 @@
         if (data.orders) {
           orders = data.orders.map(o => ({
             ...o,
+            source: String(o.source || 'otro'), // Origen añadido aquí
+            orderDate: String(o.orderDate || o.date || ''),
+            deliveryDate: String(o.deliveryDate || o.orderDate || o.date || ''),
             value: Number(o.value) || 0,
             quantity: Number(o.quantity !== undefined && o.quantity !== "" ? o.quantity : 1) || 1,
             advance: Number(o.advance !== undefined && o.advance !== "" ? o.advance : o.value) || 0,
@@ -736,6 +756,14 @@
         return;
       }
 
+      // Iconos para la red social
+      const sourceIcons = {
+        instagram: '<i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-600"></i>',
+        whatsapp: '<i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-500"></i>',
+        tiktok: '<i data-lucide="music" class="w-3.5 h-3.5 text-slate-800"></i>',
+        otro: '<i data-lucide="globe" class="w-3.5 h-3.5 text-slate-400"></i>'
+      };
+
       filtered.forEach(o => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-50/80 transition";
@@ -746,11 +774,20 @@
         const saldoPendiente = valTotal - advanceVal;
         const shippingVal = Number(o.shippingCost) || 0;
         const shippingPaid = o.shippingPaid === 'paid';
+        
+        const sIcon = sourceIcons[o.source] || sourceIcons.otro;
+        const sLabel = o.source ? o.source.charAt(0).toUpperCase() + o.source.slice(1) : 'Otro';
 
         tr.innerHTML = `
           <td class="py-3.5 px-6">
-            <div class="font-semibold text-slate-800">${escapeHtml(o.client)}</div>
-            <div class="text-[11px] text-slate-400">${o.date}</div>
+            <div class="font-semibold text-slate-800 flex items-center gap-1.5">
+              ${escapeHtml(o.client)}
+              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-slate-100 text-[10px] font-medium text-slate-600" title="${sLabel}">
+                ${sIcon}
+              </span>
+            </div>
+            <div class="text-[11px] text-slate-500 mt-0.5">📅 Pedido: <span class="font-medium">${o.orderDate || '—'}</span></div>
+            <div class="text-[11px] text-brand-600 font-semibold">🚀 Entrega: ${o.deliveryDate || '—'}</div>
           </td>
           <td class="py-3.5 px-6">
             <div class="font-medium text-slate-700">${escapeHtml(o.desc)}</div>
@@ -794,6 +831,7 @@
         `;
         tbody.appendChild(tr);
       });
+      lucide.createIcons(); // Recargar iconos dentro de la tabla
     }
 
     function renderMonthlySummary() {
@@ -803,7 +841,8 @@
       const monthMap = {};
 
       orders.forEach(o => {
-        const monthKey = o.date ? o.date.substring(0, 7) : 'Sin Fecha';
+        const dDate = o.deliveryDate || o.orderDate;
+        const monthKey = dDate ? dDate.substring(0, 7) : 'Sin Fecha';
         if (!monthMap[monthKey]) {
           monthMap[monthKey] = { ingresos: 0, reinversion: 0, mom: 0, tati: 0, gastos: 0 };
         }
@@ -905,7 +944,9 @@
       const orderData = {
         id: document.getElementById('order-id').value || Date.now().toString(),
         client: document.getElementById('order-client').value.trim(),
-        date: document.getElementById('order-date').value,
+        source: document.getElementById('order-source').value,
+        orderDate: document.getElementById('order-date').value,
+        deliveryDate: document.getElementById('delivery-date').value,
         desc: document.getElementById('order-desc').value.trim(),
         quantity: Number(document.getElementById('order-quantity').value) || 1,
         value: Number(document.getElementById('order-value').value),
@@ -1007,6 +1048,7 @@
     function resetOrderForm() {
       document.getElementById('order-id').value = '';
       document.getElementById('order-client').value = '';
+      document.getElementById('order-source').value = 'instagram'; // Por defecto Instagram
       document.getElementById('order-desc').value = '';
       document.getElementById('order-quantity').value = '1';
       document.getElementById('order-value').value = '';
@@ -1025,7 +1067,9 @@
 
       document.getElementById('order-id').value = o.id;
       document.getElementById('order-client').value = o.client;
-      document.getElementById('order-date').value = o.date;
+      document.getElementById('order-source').value = o.source || 'instagram';
+      document.getElementById('order-date').value = o.orderDate || '';
+      document.getElementById('delivery-date').value = o.deliveryDate || '';
       document.getElementById('order-desc').value = o.desc;
       document.getElementById('order-quantity').value = o.quantity !== undefined ? o.quantity : 1;
       document.getElementById('order-value').value = o.value;
