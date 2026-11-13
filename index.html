@@ -6,8 +6,10 @@
   <title>Tatacrochet 2027 - AMOOOOOOR</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons (Para la interfaz) -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- FontAwesome (Para los logos oficiales de Redes Sociales) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,7 +181,7 @@
       </form>
 
       <div class="mt-6 text-center text-xs text-slate-400">
-        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono"> Jejeje </code>
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">JeJeJe</code>
       </div>
     </div>
   </div>
@@ -410,11 +412,11 @@
         <div class="flex items-center gap-3">
           <span class="font-heading font-bold text-slate-700 text-sm">Tatacrochet 2027</span>
           <span class="text-slate-300">•</span>
-          <span>Hecho con amor jejeje </span>
+          <span>Hecho con amor jeje</span>
         </div>
         <div class="flex items-center gap-2 text-slate-400">
           <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
-          <span>Con mucho amor para mi princesa </span>
+          <span>Con mucho amor para mi princesa</span>
         </div>
       </div>
     </footer>
@@ -637,7 +639,7 @@
         if (data.orders) {
           orders = data.orders.map(o => ({
             ...o,
-            source: String(o.source || 'otro'), // Origen añadido aquí
+            source: String(o.source || 'otro'), // Origen
             orderDate: String(o.orderDate || o.date || ''),
             deliveryDate: String(o.deliveryDate || o.orderDate || o.date || ''),
             value: Number(o.value) || 0,
@@ -756,12 +758,12 @@
         return;
       }
 
-      // Iconos para la red social
+      // 🔴 AQUÍ ESTÁ LA MAGIA: Logos Oficiales con FontAwesome 🔴
       const sourceIcons = {
-        instagram: '<i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-600"></i>',
-        whatsapp: '<i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-500"></i>',
-        tiktok: '<i data-lucide="music" class="w-3.5 h-3.5 text-slate-800"></i>',
-        otro: '<i data-lucide="globe" class="w-3.5 h-3.5 text-slate-400"></i>'
+        instagram: '<i class="fa-brands fa-instagram text-pink-600 text-sm"></i>',
+        whatsapp: '<i class="fa-brands fa-whatsapp text-emerald-500 text-sm"></i>',
+        tiktok: '<i class="fa-brands fa-tiktok text-slate-900 text-sm"></i>',
+        otro: '<i class="fa-solid fa-globe text-slate-400 text-sm"></i>'
       };
 
       filtered.forEach(o => {
@@ -780,9 +782,9 @@
 
         tr.innerHTML = `
           <td class="py-3.5 px-6">
-            <div class="font-semibold text-slate-800 flex items-center gap-1.5">
+            <div class="font-semibold text-slate-800 flex items-center gap-2">
               ${escapeHtml(o.client)}
-              <span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-slate-100 text-[10px] font-medium text-slate-600" title="${sLabel}">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded bg-slate-100 shadow-sm" title="${sLabel}">
                 ${sIcon}
               </span>
             </div>
@@ -831,7 +833,7 @@
         `;
         tbody.appendChild(tr);
       });
-      lucide.createIcons(); // Recargar iconos dentro de la tabla
+      lucide.createIcons(); 
     }
 
     function renderMonthlySummary() {
