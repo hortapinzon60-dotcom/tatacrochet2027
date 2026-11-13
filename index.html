@@ -181,7 +181,7 @@
       </form>
 
       <div class="mt-6 text-center text-xs text-slate-400">
-        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">Tatis jeje</code>
+        Clave predeterminada: <code class="bg-slate-100 px-2 py-1 rounded text-slate-600 font-mono">Tatis</code>
       </div>
     </div>
   </div>
@@ -637,7 +637,18 @@
         const data = await response.json();
         
         if (data.orders) {
-          orders = data.orders.map(o => ());
+          orders = data.orders.map(o => ({
+            ...o,
+            source: String(o.source || 'otro'), 
+            // EL FILTRO MAGICO PARA QUITAR LA HORA
+            orderDate: String(o.orderDate || o.date || '').split('T')[0],
+            deliveryDate: String(o.deliveryDate || o.orderDate || o.date || '').split('T')[0],
+            value: Number(o.value) || 0,
+            quantity: Number(o.quantity !== undefined && o.quantity !== "" ? o.quantity : 1) || 1,
+            advance: Number(o.advance !== undefined && o.advance !== "" ? o.advance : o.value) || 0,
+            momHelped: o.momHelped === true || o.momHelped === "true",
+            shippingCost: Number(o.shippingCost) || 0
+          }));
         } else {
           orders = Array.isArray(data) ? data : [];
         }
